@@ -1,0 +1,29 @@
+{
+  "name": "temp-rest",
+  "version": "1.0.0",
+  "description": "Project to measure skills",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "temp-rest"
+  ],
+  "author": "Luis Navarro lu1tr0n",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.3",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.4.9",
+    "mongoose-unique-validator": "^2.0.2",
+    "nodemon": "^1.18.9",
+    "oauth2orize": "^1.11.0",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
+    "passport-http-bearer": "^1.0.1",
+    "underscore": "^1.9.1"
+  }
+}
