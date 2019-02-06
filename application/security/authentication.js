@@ -86,10 +86,9 @@ passport.use(new BearerAuthentication(
                 return callback(err);
             }
             // No token found
-            if (!token) {
+            if (!tokenData) {
                 return callback(null, false);
             }
-
             // Search data user
             User.findOne({ _id: tokenData.userId}, (err, userData) => {
                 // Error

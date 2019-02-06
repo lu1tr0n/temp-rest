@@ -22,6 +22,11 @@ const app = express();
 const session = require('express-session');
 // Import configuration global
 const config = require('./config/config');
+// Import CORS for header-accept: * 
+const cors = require('cors')
+
+// header configuration and cors
+app.use(cors());
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
