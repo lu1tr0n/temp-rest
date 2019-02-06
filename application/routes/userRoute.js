@@ -33,5 +33,7 @@
 
  app.delete('/user/:id', auth.isAuthenticated, userController.deleteUser);
 
+ app.get('/profile', auth.isAuthenticated, userController.profile);
+
  // Export app
  module.exports = app;
