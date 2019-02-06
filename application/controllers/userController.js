@@ -173,6 +173,22 @@ let deleteUser = (req, res, next) => {
     });
 };
 
+// Handle profile of user
+let profile = (req, res, next) => {
+    if (!req.user) {
+        return res.status(400).json({
+            ok: false,
+            message: 'No Log IN'
+        });
+    }
+
+    // Success
+    return res.json({
+        ok: true,
+        user: req.user
+    });
+};
+
 /**
  * @description Export function for controller
  */
@@ -181,5 +197,6 @@ module.exports = {
     viewUser,
     newUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    profile
 }
