@@ -55,7 +55,7 @@ let newTemp = (req, res, next) => {
     let body = req.body;
 
     // Get data for POST
-    let tempData = new User({
+    let tempData = new Temp({
         name: body.name,
         color: body.color
     });
