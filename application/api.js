@@ -20,5 +20,8 @@ app.use('/api', require('./routes/clientRoute'));
 // Use oauth 2.0 security
 app.use('/api/oauth2', require('./routes/oauth2Route'));
 
+// Use temp data end point
+app.use('/api', require('./routes/tempRoute'));
+
 // Export
 module.exports = app;
