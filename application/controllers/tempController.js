@@ -38,6 +38,14 @@ let allTemps = (req, res, next) => {
             }
 
             Temp.count( { state: true }, (err, counter) => {
+                // Error
+                if (err) {
+                    res.status(400).json({
+                        ok: false,
+                        err   
+                    });
+                }
+
                 // Response
                 res.json({
                     ok: true,
@@ -120,7 +128,7 @@ let updateTemp = (req, res, next) => {
         res.json({
             ok: true,
             message: 'Temp data info updated!',
-            data: temp
+            data: tempData
         });
     });
 };
@@ -159,6 +167,26 @@ let deleteTemp = (req, res, next) => {
 
 };
 
+// Handle last temp register @method GET
+let lastTemp = (req, res, next) => {
+
+    Temp.findOne({}, {}, { sort: { 'createdAt' : -1 } }, (err, temp) => {
+        // Error
+        if (err) {
+            res.status(400).json({
+                ok: false,
+                err
+            });
+        } 
+        // Success
+        res.json({
+            ok: true,
+            message: 'last temp loading..',
+            data: temp
+        });
+    });
+};
+
 /**
  * @description Export function for controller
  */
@@ -167,5 +195,6 @@ module.exports = {
     viewTemp,
     newTemp,
     updateTemp,
-    deleteTemp
+    deleteTemp,
+    lastTemp
 }

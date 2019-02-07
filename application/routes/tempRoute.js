@@ -31,7 +31,9 @@ app.get('/temps', auth.isAuthenticated, tempController.allTemps);
 
  app.put('/temp/:id', auth.isAuthenticated, tempController.updateTemp);
 
- app.delete('/temo/:id', auth.isAuthenticated, tempController.deleteTemp);
+ app.delete('/temp/:id', auth.isAuthenticated, tempController.deleteTemp);
+
+ app.get('/last', auth.isAuthenticated, tempController.lastTemp);
 
   // Export app
   module.exports = app;
